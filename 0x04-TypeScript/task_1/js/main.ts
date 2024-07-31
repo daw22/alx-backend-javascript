@@ -4,7 +4,7 @@ interface Teacher {
   readonly lastName: string;
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
-  [index:string]: any
+  [index: string]: any;
 }
 
 // directors interface, extends teacher interface
@@ -12,11 +12,11 @@ interface Directors extends Teacher {
   numberOfReports: number;
 }
 // function interface
-interface printTeacherFunction {
+interface PrintTeacherFunction {
   (firstName: string, lastName: string): string; 
 }
 
-let printTeacher: printTeacherFunction;
+let printTeacher: PrintTeacherFunction;
 
 printTeacher = (firstName: string, lastName: string): string => {
   return `${firstName[0]}. ${lastName}`;
