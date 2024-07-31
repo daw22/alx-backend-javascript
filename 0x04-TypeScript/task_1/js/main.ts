@@ -42,10 +42,10 @@ class StudentClass implements ClassInterface {
   }
 
   workOnHomeWork(): string {
-    return ''
+    return 'Currently working'
   }
 
   displayName(): string {
-    return ''
+    return this.firstName;
   }
 }
