@@ -1,5 +1,5 @@
 // teacher interface
-interface Teacher {
+export interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
   fullTimeEmployee: boolean;
@@ -8,31 +8,31 @@ interface Teacher {
 }
 
 // directors interface, extends teacher interface
-interface Directors extends Teacher {
+export interface Directors extends Teacher {
   numberOfReports: number;
 }
 // function interface
-interface PrintTeacherFunction {
+export interface PrintTeacherFunction {
   (firstName: string, lastName: string): string; 
 }
 
-let printTeacher: PrintTeacherFunction;
+export let printTeacher: PrintTeacherFunction;
 
 printTeacher = (firstName: string, lastName: string): string => {
   return `${firstName[0]}. ${lastName}`;
 }
 
 //class Interface
-interface ClassInterface {
+export interface ClassInterface {
   workOnHomeWork(): string;
   displayName(): string;
 }
 // interface for class constructor
-interface ConstructorInterface {
+export interface ConstructorInterface {
   new (firstName: string, lastName: string): ClassInterface;
 }
 // class- StudentClass
-class StudentClass implements ClassInterface {
+export class StudentClass implements ClassInterface {
   firstName: string;
   lastName: number;
   

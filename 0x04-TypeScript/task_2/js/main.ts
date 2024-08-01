@@ -1,16 +1,16 @@
-interface DirectorInterface {
+export interface DirectorInterface {
   workFromeHome(): string;
   getCofferBreak(): string;
   workDirectorTasks(): string;
 }
 
-interface TeacherInterface {
+export interface TeacherInterface {
   workFromeHome(): string;
   getCofferBreak(): string;
   workTeacherTasks(): string;
 }
 
-class Director implements DirectorInterface {
+export class Director implements DirectorInterface {
   
   workFromeHome(): string {
     return 'Working from home';
@@ -25,7 +25,7 @@ class Director implements DirectorInterface {
   }
 }
 
-class Teacher implements TeacherInterface {
+export class Teacher implements TeacherInterface {
   
   workFromeHome(): string {
     return 'Cannot work from home';
@@ -41,7 +41,7 @@ class Teacher implements TeacherInterface {
   
 }
 
-function createEmployee(salary: number | string): Director | Teacher {
+export function createEmployee(salary: number | string): Director | Teacher {
   if (typeof salary === 'string') salary = parseInt(salary);
   if (salary < 500) {
     return new Teacher();
@@ -50,11 +50,11 @@ function createEmployee(salary: number | string): Director | Teacher {
   }
 }
 
-function isDirector(employee: Teacher | Director): boolean {
+export function isDirector(employee: Teacher | Director): boolean {
   return employee instanceof Director;
 }
 
-function executeWork(employee: Teacher | Director): string {
+export function executeWork(employee: Teacher | Director): string {
   if (isDirector(employee)) {
     return (employee as Director).workDirectorTasks();
   } else {
@@ -62,9 +62,9 @@ function executeWork(employee: Teacher | Director): string {
   }
 }
 
-type Subjects = "Math" | "History";
+export type Subjects = "Math" | "History";
 
-function teachClass(todayClass: Subjects): string {
+export function teachClass(todayClass: Subjects): string {
   if (todayClass === 'Math') {
     return 'Teaching Math'
   } else if (todayClass === 'History') {
