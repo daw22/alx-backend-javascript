@@ -6,15 +6,15 @@ describe('caluculateNumber', function() {
   describe('SUM', function() {
     it('returns correct sum', function () {
       const result = calculateNumber('SUM', 1, 3);
-      assert.equal(result, 4);
+      assert.strictEqual(result, 4);
     });
     it('rounds and returns correct sum', function () {
       const result = calculateNumber('SUM', 1.2, 3.7);
-      assert.equal(result, 5);
+      assert.strictEqual(result, 5);
     });
     it('returns correct sum', function () {
       const result = calculateNumber('SUM', 1.5, 3.7);
-      assert.equal(result, 6);
+      assert.strictEqual(result, 6);
     });
   });
 
